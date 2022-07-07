@@ -28,7 +28,7 @@ const EmptyList = () => {
  * @param props {navigation, route}
  * @returns Screen Component for Home
  */
-function HomeScreen(props: HomeStackScreen) {
+const HomeScreen = (props: HomeStackScreen) => {
   const {navigation} = props;
   const {data, onSearch, query, sorts, onSort} = useFilter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -81,6 +81,6 @@ function HomeScreen(props: HomeStackScreen) {
       <ModalFilter visible={modalOpen} sorts={sorts} onSelect={onSelect} />
     </View>
   );
-}
+};
 
 export default HomeScreen;

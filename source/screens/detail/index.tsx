@@ -6,7 +6,7 @@ import Section from './components/section';
 import SectionChildren from './components/section-children';
 import styles from './style';
 
-function DetailScreen(props: DetailStackScreen) {
+const DetailScreen = (props: DetailStackScreen) => {
   const {route} = props;
   const data: ITransaction = JSON.parse(route.params.data);
 
@@ -19,6 +19,6 @@ function DetailScreen(props: DetailStackScreen) {
       />
     </View>
   );
-}
+};
 
 export default DetailScreen;
