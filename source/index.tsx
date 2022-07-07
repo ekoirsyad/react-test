@@ -8,7 +8,7 @@ import {colorPalette} from './utilities/styles/colors';
 
 const Stack = createNativeStackNavigator<MainStackParamList>();
 
-function Main() {
+const Main = () => {
   return (
     <SafeAreaView style={style.container}>
       <StatusBar
@@ -18,12 +18,10 @@ function Main() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            // options={{headerShown: false}}
             name={modules.Home.name}
             component={modules.Home.component}
           />
           <Stack.Screen
-            // options={{headerShown: false}}
             name={modules.Detail.name}
             component={modules.Detail.component}
           />
@@ -31,6 +29,6 @@ function Main() {
       </NavigationContainer>
     </SafeAreaView>
   );
-}
+};
 
 export default Main;
