@@ -19,6 +19,10 @@ const styles = StyleSheet.create({
   labelFilter: {
     color: colorPalette.primary,
   },
+  buttonFilter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
 
 export default styles;

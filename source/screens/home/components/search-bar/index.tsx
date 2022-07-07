@@ -2,14 +2,23 @@ import React from 'react';
 import {Image, Pressable, Text, TextInput, View} from 'react-native';
 import {colorPalette} from '../../../../utilities/styles/colors';
 import {typography} from '../../../../utilities/styles/typography';
-import {toUpperCase} from '../../../../utilities/text-transform';
+import {shortenText, toUpperCase} from '../../../../utilities/text-transform';
 import styles from './style';
 
 interface ISearchBar {
   onSearch: (text: string) => void;
+  onOpenModal: () => void;
   query: string;
+  selected: string;
 }
 
+/**
+ * A Component for top section
+ * on Home Screen used for search
+ * & sort transaction
+ * @param props ISearchBar
+ * @returns React Element
+ */
 const SearchBar = (props: ISearchBar) => {
   return (
     <View style={[styles.container]}>
@@ -20,9 +29,9 @@ const SearchBar = (props: ISearchBar) => {
         value={props.query}
         placeholder={'Cari nama, bank, atau nominal'}
       />
-      <Pressable style={{flexDirection: 'row', alignItems: 'center'}}>
+      <Pressable style={styles.buttonFilter} onPress={props.onOpenModal}>
         <Text style={[typography.content, styles.labelFilter]}>
-          {toUpperCase('Urutkan')}
+          {shortenText(toUpperCase(props.selected), 10)}
         </Text>
         <Image
           source={require('../../../../assets/ChevronDown.png')}

@@ -20,6 +20,12 @@ interface ITransactionItem {
   onNavigateToDetail: (item: ITransaction) => void;
 }
 
+/**
+ * A component to render status tag
+ * based on transaction status
+ * @param {status} props {string}
+ * @returns React Element
+ */
 const TransactionStatus = ({status}: {status: string}) => {
   const statusContainer: ViewStyle =
     status === 'SUCCESS'
@@ -37,6 +43,11 @@ const TransactionStatus = ({status}: {status: string}) => {
   );
 };
 
+/**
+ * A component to Render Item in Transaction List
+ * @param {item, onNavigateToDetail} props ITransactionItem
+ * @returns React Element
+ */
 const TransactionItem = ({item, onNavigateToDetail}: ITransactionItem) => {
   const color: ColorValue =
     item.status === 'SUCCESS' ? colorPalette.secondary : colorPalette.primary;
