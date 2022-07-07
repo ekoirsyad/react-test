@@ -7,10 +7,22 @@ const typography = StyleSheet.create({
     fontWeight: '500',
     color: colorPalette.fontPrimary,
   },
-  content: {
-    // fontSize: 18,
+  subTitle: {
+    fontSize: 18,
     fontWeight: '500',
     color: colorPalette.fontPrimary,
+  },
+  content: {
+    fontWeight: '500',
+    color: colorPalette.fontPrimary,
+  },
+  contentBold: {
+    fontWeight: 'bold',
+    color: colorPalette.fontPrimary,
+  },
+  button: {
+    fontWeight: 'bold',
+    color: colorPalette.primary,
   },
 });
 

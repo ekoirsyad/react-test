@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {FlatList, Text, View} from 'react-native';
 import useFilter from '../../hooks/useFilter';
+import {HomeStackScreen} from '../../utilities/navigator-configs';
 import {ITransaction} from '../../utilities/transaction-types';
 import SearchBar from './components/search-bar';
 import TransactionItem from './components/transaction-item';
@@ -16,8 +17,17 @@ const EmptyList = () => {
   );
 };
 
-function HomeScreen() {
+function HomeScreen(props: HomeStackScreen) {
+  const {navigation} = props;
   const {data, onSearch, query} = useFilter();
+
+  const onNavigateToDetail = useCallback(
+    (item: ITransaction) => {
+      const selectedItem = JSON.stringify(item);
+      navigation.push('Detail', {data: selectedItem});
+    },
+    [navigation],
+  );
 
   return (
     <View style={styles.container}>
@@ -26,7 +36,12 @@ function HomeScreen() {
         style={styles.container}
         data={data ? Object.values(data) : []}
         extraData={data}
-        renderItem={TransactionItem}
+        renderItem={({item}) => (
+          <TransactionItem
+            item={item}
+            onNavigateToDetail={onNavigateToDetail}
+          />
+        )}
         keyExtractor={keyExtractor}
         ListEmptyComponent={EmptyList}
       />
