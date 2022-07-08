@@ -1,9 +1,20 @@
 export enum SortType {
-  ASC = 'name A-Z',
-  DESC = 'name Z-A',
-  DATE_ASC = 'date newest',
-  DATE_DESC = 'date oldest',
+  NO_SELECTION = 'NO_SELECTION',
+  ASC = 'ASC',
+  DESC = 'DESC',
+  DATE_ASC = 'DATE_ASC',
+  DATE_DESC = 'DATE_DESC',
 }
+
+export interface IFilter {
+  label: string;
+  type: SortType;
+  selected: boolean;
+}
+
+export type SortList = {
+  [key in SortType]: IFilter;
+};
 
 export interface ITransaction {
   id: string;
@@ -23,3 +34,34 @@ export interface ITransaction {
 export interface ITransactionResponse {
   [key: string]: ITransaction;
 }
+
+/**
+ * Initial data for Sorting transaction
+ */
+export const dataSorts: SortList = {
+  NO_SELECTION: {
+    label: 'URUTKAN',
+    type: SortType.NO_SELECTION,
+    selected: true,
+  },
+  ASC: {
+    label: 'Nama A-Z',
+    type: SortType.ASC,
+    selected: false,
+  },
+  DESC: {
+    label: 'Nama Z-A',
+    type: SortType.DESC,
+    selected: false,
+  },
+  DATE_ASC: {
+    label: 'Tanggal Terbaru',
+    type: SortType.DATE_ASC,
+    selected: false,
+  },
+  DATE_DESC: {
+    label: 'Tanggal Terlama',
+    type: SortType.DATE_DESC,
+    selected: false,
+  },
+};

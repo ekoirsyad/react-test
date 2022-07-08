@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colorPalette} from '../../../../utilities/styles/colors';
+import {colorPalette} from '~utilities/styles/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,10 +14,14 @@ const styles = StyleSheet.create({
   },
   textInputContainer: {
     flex: 1,
-    fontSize: 18,
+    fontSize: 16,
   },
   labelFilter: {
     color: colorPalette.primary,
+  },
+  buttonFilter: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
