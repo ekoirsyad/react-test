@@ -1,6 +1,6 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import DetailScreen from '../screens/detail';
-import HomeScreen from '../screens/home';
+import DetailScreen from '~screens/detail';
+import HomeScreen from '~screens/home';
 
 interface IScreen {
   name: keyof MainStackParamList;

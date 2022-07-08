@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colorPalette} from '../../../../utilities/styles/colors';
+import {colorPalette} from '~utilities/styles/colors';
 
 const styles = StyleSheet.create({
   sectionContainer: {

@@ -7,13 +7,13 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import currencyTransformer from '../../../../utilities/currency-transform';
-import dateTransformer from '../../../../utilities/date-transform';
-import {colorPalette} from '../../../../utilities/styles/colors';
-import {typography} from '../../../../utilities/styles/typography';
-import textTransform, {toUpperCase} from '../../../../utilities/text-transform';
-import {ITransaction} from '../../../../utilities/transaction-types';
-import styles from './style';
+import currencyTransformer from '~utilities/currency-transform';
+import dateTransformer from '~utilities/date-transform';
+import {colorPalette} from '~utilities/styles/colors';
+import {typography} from '~utilities/styles/typography';
+import textTransform, {toUpperCase} from '~utilities/text-transform';
+import {ITransaction} from '~utilities/transaction-types';
+import styles from '~screens/home/components/transaction-item/style';
 
 interface ITransactionItem {
   item: ITransaction;

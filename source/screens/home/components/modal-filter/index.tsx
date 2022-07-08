@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Modal, Text, Image, FlatList, Pressable} from 'react-native';
-import {typography} from '../../../../utilities/styles/typography';
-import {IFilter, SortList} from '../../../../utilities/transaction-types';
+import {typography} from '~utilities/styles/typography';
+import {IFilter, SortList} from '~utilities/transaction-types';
 
-const RadioSelected = require('../../../../assets/DotCircle.png');
-const Radio = require('../../../../assets/Circle.png');
+const RadioSelected = require('~assets/DotCircle.png');
+const Radio = require('~assets/Circle.png');
 
-import styles from './style';
+import styles from '~screens/home/components/modal-filter/style';
 
 interface IModalFilter {
   sorts: SortList;

@@ -1,10 +1,10 @@
 import React, {ReactComponentElement, useCallback, useState} from 'react';
 import {Alert, Image, Pressable, Text, View} from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
-import {colorPalette} from '../../../../utilities/styles/colors';
-import {typography} from '../../../../utilities/styles/typography';
-import {toUpperCase} from '../../../../utilities/text-transform';
-import styles from './style';
+import {colorPalette} from '~utilities/styles/colors';
+import {typography} from '~utilities/styles/typography';
+import {toUpperCase} from '~utilities/text-transform';
+import styles from '~screens/detail/components/section/style';
 
 interface ISection {
   title: string;

@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {ITransactionResponse} from '../utilities/transaction-types';
+import {ITransactionResponse} from '~utilities/transaction-types';
 
 /**
  * Hooks for get the transaction list fron service

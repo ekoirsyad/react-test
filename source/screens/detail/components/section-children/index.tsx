@@ -1,14 +1,14 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import currencyTransformer from '../../../../utilities/currency-transform';
-import dateTransformer from '../../../../utilities/date-transform';
-import {typography} from '../../../../utilities/styles/typography';
+import currencyTransformer from '~utilities/currency-transform';
+import dateTransformer from '~utilities/date-transform';
+import {typography} from '~utilities/styles/typography';
 import textTransform, {
   toCapitalized,
   toUpperCase,
-} from '../../../../utilities/text-transform';
-import {ITransaction} from '../../../../utilities/transaction-types';
-import styles from './style';
+} from '~utilities/text-transform';
+import {ITransaction} from '~utilities/transaction-types';
+import styles from '~screens/detail/components/section-children/style';
 
 interface ISectionChildren {
   data: ITransaction;

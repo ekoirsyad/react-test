@@ -1,12 +1,12 @@
 import {useCallback, useMemo, useState} from 'react';
-import {getTime} from '../utilities/date-transform';
+import {getTime} from '~utilities/date-transform';
 import {
   dataSorts,
   ITransactionResponse,
   SortList,
   SortType,
-} from '../utilities/transaction-types';
-import useService from './useService';
+} from '~utilities/transaction-types';
+import useService from '~hooks/useService';
 
 /**
  * Hooks for sort and search
@@ -22,7 +22,7 @@ const useFilter = () => {
 
   /**
    * Memoized function to sort and search
-   * based on @query and @sorts
+   * based on @query and @sorts data changes
    * @returns {ITransactionResponse | {}}
    */
   const transactions = useMemo(() => {

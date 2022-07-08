@@ -1,12 +1,12 @@
 import React, {useCallback, useMemo, useState} from 'react';
 import {FlatList, Text, View} from 'react-native';
-import useFilter from '../../hooks/useFilter';
-import {HomeStackScreen} from '../../utilities/navigator-configs';
-import {IFilter, ITransaction} from '../../utilities/transaction-types';
-import ModalFilter from './components/modal-filter';
-import SearchBar from './components/search-bar';
-import TransactionItem from './components/transaction-item';
-import styles from './style';
+import useFilter from '~hooks/useFilter';
+import {HomeStackScreen} from '~utilities/navigator-configs';
+import {IFilter, ITransaction} from '~utilities/transaction-types';
+import ModalFilter from '~screens/home/components/modal-filter';
+import SearchBar from '~screens/home/components/search-bar';
+import TransactionItem from '~screens/home/components/transaction-item';
+import styles from '~screens/home/style';
 
 /**
  * key extractor for flatlist
@@ -15,6 +15,9 @@ import styles from './style';
  */
 const keyExtractor = (item: ITransaction) => item.id;
 
+/**
+ * @returns Component for empty list on transaction
+ */
 const EmptyList = () => {
   return (
     <View style={styles.containerEmptyList}>
@@ -33,6 +36,10 @@ const HomeScreen = (props: HomeStackScreen) => {
   const {data, onSearch, query, sorts, onSort} = useFilter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
+  /**
+   * callback for onPress on Item Transaction
+   * with params for Detail Screen
+   */
   const onNavigateToDetail = useCallback(
     (item: ITransaction) => {
       const selectedItem = JSON.stringify(item);
@@ -41,15 +48,27 @@ const HomeScreen = (props: HomeStackScreen) => {
     [navigation],
   );
 
+  /**
+   * call back for onPress of sort radio button
+   * @param item IFilter
+   */
   const onSelect = (item: IFilter) => {
     onSort(item.type);
     setModalOpen(false);
   };
 
+  /**
+   * call back for onPress of sort button in search bar
+   */
   const onOpenModal = () => {
     setModalOpen(true);
   };
 
+  /**
+   * memoized string for selected sort
+   * to render in search bar
+   * @return string
+   */
   const selectedSort: string = useMemo(() => {
     const selected = Object.values(sorts).find(
       (item: IFilter) => item.selected,

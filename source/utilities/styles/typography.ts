@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colorPalette} from './colors';
+import {colorPalette} from '~utilities/styles/colors';
 /**
  * styles for the typography component.
  */

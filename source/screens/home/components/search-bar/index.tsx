@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, Pressable, Text, TextInput, View} from 'react-native';
-import {colorPalette} from '../../../../utilities/styles/colors';
-import {typography} from '../../../../utilities/styles/typography';
-import {shortenText, toUpperCase} from '../../../../utilities/text-transform';
-import styles from './style';
+import {colorPalette} from '~utilities/styles/colors';
+import {typography} from '~utilities/styles/typography';
+import {shortenText, toUpperCase} from '~utilities/text-transform';
+import styles from '~screens/home/components/search-bar/style';
 
 interface ISearchBar {
   onSearch: (text: string) => void;
