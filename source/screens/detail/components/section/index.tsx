@@ -1,5 +1,6 @@
 import React, {ReactComponentElement, useCallback, useState} from 'react';
-import {Clipboard, Image, Pressable, Text, View} from 'react-native';
+import {Alert, Image, Pressable, Text, View} from 'react-native';
+import Clipboard from '@react-native-clipboard/clipboard';
 import {colorPalette} from '../../../../utilities/styles/colors';
 import {typography} from '../../../../utilities/styles/typography';
 import {toUpperCase} from '../../../../utilities/text-transform';
@@ -20,8 +21,10 @@ const Section = ({content, title, children}: ISection) => {
 
   const toggleLabel = toggle ? 'Tutup' : 'Buka';
 
-  const onCopy = useCallback(() => {
+  const onCopy = useCallback(async () => {
     Clipboard.setString(content as string);
+
+    Alert.alert('Berhasil', 'Transaksi ID berhasil disalin');
   }, [content]);
 
   return (
