@@ -1,3 +1,7 @@
+/**
+ * Color palette for the application.
+ */
+
 const colorPalette = {
   primary: '#FD6542',
   secondary: '#019875',

@@ -35,6 +35,9 @@ export interface ITransactionResponse {
   [key: string]: ITransaction;
 }
 
+/**
+ * Initial data for Sorting transaction
+ */
 export const dataSorts: SortList = {
   NO_SELECTION: {
     label: 'URUTKAN',

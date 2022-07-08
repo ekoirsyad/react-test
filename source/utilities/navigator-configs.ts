@@ -26,6 +26,9 @@ export type DetailStackScreen = NativeStackScreenProps<
   'Detail'
 >;
 
+/**
+ * Modules(screen) list for navigator.
+ */
 export const modules: IModules = {
   Home: {
     name: 'Home',

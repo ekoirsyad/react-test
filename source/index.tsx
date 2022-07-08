@@ -8,6 +8,10 @@ import {colorPalette} from './utilities/styles/colors';
 
 const Stack = createNativeStackNavigator<MainStackParamList>();
 
+/**
+ * NavigationContainer wrapped with SafeAreaView
+ */
+
 const Main = () => {
   return (
     <SafeAreaView style={style.container}>

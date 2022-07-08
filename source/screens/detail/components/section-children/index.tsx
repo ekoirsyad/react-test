@@ -14,6 +14,10 @@ interface ISectionChildren {
   data: ITransaction;
 }
 
+/**
+ * @param IsectionChildren
+ * @returns ReactComponentElement for Item in SectionChildren
+ */
 const Item = ({title, content}: {title: string; content: string}) => {
   return (
     <View style={styles.itemContainer}>
@@ -23,6 +27,10 @@ const Item = ({title, content}: {title: string; content: string}) => {
   );
 };
 
+/**
+ * @param IsectionChildren
+ * @returns Component Section Children in Detail Screen
+ */
 const SectionChildren = ({data}: ISectionChildren) => {
   return (
     <View style={styles.sectionContainer}>

@@ -12,6 +12,10 @@ interface ISection {
   children?: ReactComponentElement<any>;
 }
 
+/**
+ * @param ISection {title: string, content?: string, children?: ReactComponentElement<any>}
+ * @returns Section Component on Detail Screen
+ */
 const Section = ({content, title, children}: ISection) => {
   const [toggle, setToggle] = useState<boolean>(true);
 
@@ -19,8 +23,10 @@ const Section = ({content, title, children}: ISection) => {
     setToggle(!toggle);
   }, [toggle]);
 
+  // Label for toggle based on state toggle
   const toggleLabel = toggle ? 'Tutup' : 'Buka';
 
+  // Function to copy transaction ID to clipboard
   const onCopy = useCallback(async () => {
     Clipboard.setString(content as string);
 

@@ -1,6 +1,8 @@
 import {StyleSheet} from 'react-native';
 import {colorPalette} from './colors';
-
+/**
+ * styles for the typography component.
+ */
 const typography = StyleSheet.create({
   title: {
     fontSize: 22,
